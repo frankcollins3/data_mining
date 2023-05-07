@@ -12,3 +12,5 @@ The intention for this javascript app is to:
 3) Use inner fs facilitated JSON files to update database.
 
 4) GraphQL for routing.
+
+5) react && express instead of Next.js 
