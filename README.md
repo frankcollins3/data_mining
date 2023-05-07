@@ -1,16 +1,41 @@
-# data_mining
-mine_nugget prototype &amp;&amp; puppeteer 
-The intention for this javascript app is to:
+# react_express_node_template
+react front end (host:3000) linked to express back end (host:5000) return {hey: 'buddy} from server/routes/getData
 
-1) Work from another repo: "Mine Nugget" to create a simple, similar UI.
+main-root of project that has access to both directories:
+[/client] ->  react front end localhost:3000
+[/server] ->  express & node back end localhost:5000
 
-2) find data and confirm: 
-* if it's doable to Use puppeteer to scrape data from leafly.com
-* * Text a specified number with the object data. If the text response from the text message indicates a truthy response, build object, if a falsy response, user confirms they are NOT okay with data.
-* * * (optionally allow through text message to send back as response data the object that is to be used to add to the API of strain data.
+"scripts": {
+    "server": "nodemon --quiet server",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+* * * * * * * * * end of main-root scripts * * * * * * * * *
 
-3) Use inner fs facilitated JSON files to update database.
 
-4) GraphQL for routing.
+/client (react front end) :
 
-5) react && express instead of Next.js 
+ "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "start-dev": "concurrently \"npm run start\" \"cd ../server && nodemon ./bin/www\""
+  },
+* * * * * * * * * end of client scripts * * * * * * * * *
+
+
+/server (express back end) : 
+"scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon ./bin/www",
+    "client": "cd client && npm start"
+  },
+  * * * * * * * * * end of server scripts * * * * * * * * *
+  
+  npm i in the client directory and the server directory 
+  
+  npm run dev from the main-root folder. ls will show scope with access to /client and /server. npm run dev runs both with npm i concurrently.
+  
+  
+  
+  
